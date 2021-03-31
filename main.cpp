@@ -5,27 +5,8 @@
 
 void adauga_instrument(std::vector<Instrument> &instrumente){
     Instrument instrument;
-    int lungime, latime;
-    std::string categorie, nume, material, culoare;
-    bool acordat;
     Dimensiuni dimensiune;
-    std::cout << "categorie:" << std::endl;
-    std::cin >> categorie;
-    std::cout << "nume:" << std::endl;
-    std::cin >> nume;
-    std::cout << "material:" << std::endl;
-    std::cin >> material;
-    std::cout << "culoare:" << std::endl;
-    std::cin >> culoare;
-
-    std::cout << "Dimensiuni:" << std::endl;
-    std::cout << "lungime:" << std::endl;
-    std::cin >> lungime;
-    std::cout << "latime:" << std::endl;
-    std::cin >> latime;
-    dimensiune.setLungime(lungime);
-    dimensiune.setLatime(latime);
-    instrument = Instrument(categorie, nume, material, culoare, acordat, dimensiune);
+    std::cin >> instrument; // ar trebui sa bag niste validari
     instrumente.push_back(instrument);
 }
 

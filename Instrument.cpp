@@ -13,11 +13,25 @@ const std::string &Instrument::getCuloare() const {
     return culoare;
 }
 std::istream &operator>>(std::istream &is, Dimensiuni &dimensiuni){
-    is >> dimensiuni.lungime >> dimensiuni.latime;
+    std::cout << "Dimensiuni:" << std::endl;
+    std::cout << "lungime:" << std::endl;
+    is >> dimensiuni.lungime;
+    std::cout << "latime:" << std::endl;
+    is >> dimensiuni.latime;
     return is;
 }
 std::istream &operator>>(std::istream &is, Instrument &instrument){
-    is >> instrument.categorie >> instrument.nume >> instrument.material >> instrument.culoare >> instrument.acordat >> instrument.dimensiune;
+    std::cout << "categorie:" << std::endl;
+    is >> instrument.categorie;
+    std::cout << "nume:" << std::endl;
+    is >> instrument.nume;
+    std::cout << "material:" << std::endl;
+    is >> instrument.material;
+    std::cout << "culoare:" << std::endl;
+    is >> instrument.culoare;
+    std::cout << "acordat:" << std::endl;
+    is >> instrument.acordat;
+    is >> instrument.dimensiune;
     return is;
 }
 
