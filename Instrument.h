@@ -18,7 +18,7 @@ public:
     friend std::istream &operator>>(std::istream &is, Dimensiuni &dimensiuni);
     Dimensiuni(const Dimensiuni &dimensiune); // de copiere
     Dimensiuni(int lungime, int latime); // de initializare
-    virtual ~Dimensiuni();
+    ~Dimensiuni();
 
     void setLungime(int lungime);
 
@@ -45,7 +45,7 @@ public:
 
     const std::string &getCuloare() const;
 
-    virtual ~Instrument();
+    ~Instrument();
 
     void acordeaza(){
         acordat = true;
@@ -59,7 +59,7 @@ public:
         std::cout << "Cant nota:" << nota;
     }
     void playSong(std::string song){
-        std::cout << "Cand melodia:" << song << std::endl;
+        std::cout << "Cant melodia:" << song << std::endl;
     }
 
     Instrument();

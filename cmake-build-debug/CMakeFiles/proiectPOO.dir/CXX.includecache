@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/sebas/CLionProjects/proiectPOO/Instrument.cpp
-Instrument.h
-C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
-iostream
--
-
 C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
 string
 -
@@ -24,5 +18,7 @@ iostream
 instrument.h
 C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
 string
+-
+vector
 -
 

@@ -14,9 +14,11 @@ const std::string &Instrument::getCuloare() const {
 }
 std::istream &operator>>(std::istream &is, Dimensiuni &dimensiuni){
     is >> dimensiuni.lungime >> dimensiuni.latime;
+    return is;
 }
 std::istream &operator>>(std::istream &is, Instrument &instrument){
     is >> instrument.categorie >> instrument.nume >> instrument.material >> instrument.culoare >> instrument.acordat >> instrument.dimensiune;
+    return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Instrument &instrument) {
