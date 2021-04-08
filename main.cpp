@@ -31,6 +31,10 @@ void produ_nota(std::vector<Instrument> &instrumente, int i){
 void acordeaza(std::vector<Instrument> &instrumente, int i){
     std::cout << "Alege ce instrument vrei sa acordezi" << std::endl;
     std::cin >> i;
+    if(i > instrumente.size()){
+        std::cout << "Nu am instrumentul asta." << std::endl;
+        return;
+    }
     instrumente[i].acordeaza();
 }
 
@@ -40,6 +44,10 @@ void vopseste(std::vector<Instrument> &instrumente, int i, std::string culoare){
     std::cin >> i;
     std::cout << "Alege si culoarea" << std::endl;
     std::cin >> culoare;
+    if(i > instrumente.size()){
+        std::cout << "Nu am instrumentul asta." << std::endl;
+        return;
+    }
     instrumente[i].vopseste("negru");
 }
 
@@ -49,6 +57,10 @@ void canta(std::vector<Instrument> &instrumente, int i, std::string cantecel){
     std::cin >> i;
     std::cout << "Alege si cantecul" << std::endl;
     std::cin >> cantecel;
+    if(i > instrumente.size()){
+        std::cout << "Nu am instrumentul asta." << std::endl;
+        return;
+    }
     instrumente[i].playSong(cantecel);
 }
 
