@@ -1,3 +1,0 @@
-C:/Users/sebas/CLionProjects/proiectPOO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/sebas/CLionProjects/proiectPOO/cmake-build-debug/CMakeFiles/proiectPOO.dir
-C:/Users/sebas/CLionProjects/proiectPOO/cmake-build-debug/CMakeFiles/edit_cache.dir
