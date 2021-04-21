@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\proiectPOO.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\proiectPOO.dir/objects.a @CMakeFiles\proiectPOO.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\proiectPOO.dir/objects.a -Wl,--no-whole-archive  -o proiectPOO.exe -Wl,--out-implib,libproiectPOO.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\proiectPOO.dir\linklibs.rsp

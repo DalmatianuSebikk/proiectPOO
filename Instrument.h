@@ -41,28 +41,34 @@ public:
     friend std::istream &operator>>(std::istream &is, Instrument &instrument);
     friend std::ostream &operator<<(std::ostream &os, const Instrument &instrument);
 
+    bool isAcordat() const;
+
     const std::string &getCategorie() const;
 
     const std::string &getCuloare() const;
 
-    ~Instrument();
+    virtual ~Instrument();
 
-    void acordeaza(){
+    virtual void acordeaza(){
         acordat = true;
         std::cout << "S-a acordat instrumentul!"<<std::endl;
     }
-    void vopseste(std::string culoareNoua){
+    virtual void vopseste(std::string culoareNoua){
         culoare = culoareNoua;
         std::cout<<"Instrument vopsit!"<<std::endl;
     }
-    void produNota(std::string nota){
+    virtual void produNota(std::string nota){
         std::cout << "Cant nota:" << nota;
     }
-    void playSong(std::string song){
+    virtual void playSong(std::string song){
         std::cout << "Cant melodia:" << song << std::endl;
     }
 
     Instrument();
+
+    void setAcordat(bool acordat);
+
+    virtual void afisare(std::ostream &os) const;
 };
 
 

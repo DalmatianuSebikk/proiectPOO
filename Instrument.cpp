@@ -5,6 +5,8 @@
 #include "Instrument.h"
 #include <iostream>
 
+
+
 const std::string &Instrument::getCategorie() const {
     return categorie;
 }
@@ -36,10 +38,14 @@ std::istream &operator>>(std::istream &is, Instrument &instrument){
 }
 
 std::ostream &operator<<(std::ostream &os, const Instrument &instrument) {
-    os << "categorie: " << instrument.categorie << " nume: " << instrument.nume << " material: " << instrument.material
-       << " culoare: " << instrument.culoare << " acordat: " << instrument.acordat << " dimensiune: "
-       << instrument.dimensiune;
+    instrument.afisare(os);
     return os;
+}
+
+void Instrument::afisare(std::ostream &os) const {
+    os << "categorie: " << categorie << " nume: " << nume << " material: " << material
+       << " culoare: " << culoare << " acordat: " << acordat << " dimensiune: "
+       << dimensiune;
 }
 
 Instrument::~Instrument() {
@@ -62,6 +68,10 @@ Instrument::Instrument(const std::string &categorie, const std::string &nume, co
 
 Instrument::Instrument() {}
 
+bool Instrument::isAcordat() const {
+    return acordat;
+}
+
 
 Dimensiuni::Dimensiuni(int lungime, int latime) : lungime(lungime), latime(latime) {}
 
@@ -83,6 +93,10 @@ Dimensiuni::~Dimensiuni() {
 
 void Dimensiuni::setLungime(int lungime) {
     Dimensiuni::lungime = lungime;
+}
+
+void Instrument::setAcordat(bool acordat) {
+    Instrument::acordat = acordat;
 }
 
 void Dimensiuni::setLatime(int latime) {

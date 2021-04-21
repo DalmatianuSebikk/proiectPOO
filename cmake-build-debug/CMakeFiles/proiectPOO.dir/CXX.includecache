@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/sebas/CLionProjects/proiectPOO/Cantaret.h
+ostream
+-
+memory
+-
+vector
+-
+Instrument.h
+C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
+
+C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
+string
+-
+iostream
+-
+
+C:/Users/sebas/CLionProjects/proiectPOO/main.cpp
+iostream
+-
+instrument.h
+C:/Users/sebas/CLionProjects/proiectPOO/Instrument.h
+Cantaret.h
+C:/Users/sebas/CLionProjects/proiectPOO/Cantaret.h
+string
+-
+vector
+-
+memory
+-
+
