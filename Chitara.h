@@ -9,6 +9,7 @@
 #include "Instrument.h"
 #include <cstring>
 
+//class Instrument;
 class Chitara: public Instrument {
 private:
     short nr_corzi;
@@ -30,6 +31,7 @@ public:
 
     void afisare(std::ostream &os) const override;
 };
+
 
 
 #endif //PROIECTPOO_CHITARA_H

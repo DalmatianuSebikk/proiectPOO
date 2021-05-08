@@ -26,7 +26,7 @@ int Chitara::conecteazaLaAmplificator(std::string numeAmp) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Chitara &chitara) {
-    os << static_cast<const Instrument &>(chitara) << " nr_corzi: " << chitara.nr_corzi << " tip: " << chitara.tip
+    os << static_cast<const Instrument &>((const Instrument &) chitara) << " nr_corzi: " << chitara.nr_corzi << " tip: " << chitara.tip
        << " conectabil: " << chitara.conectabil;
     return os;
 }
@@ -47,3 +47,5 @@ Chitara::Chitara(const std::string &categorie, const std::string &nume, const st
                  const std::string &tip, bool conectabil) : Instrument(categorie, nume, material, culoare, acordat,
                                                                        dimensiune), nr_corzi(nrCorzi), tip(tip),
                                                             conectabil(conectabil) {}
+
+

@@ -1,10 +1,10 @@
 #include <iostream>
-#include "instrument.h"
+#include "Instrument.h"
 #include "Cantaret.h"
 #include <string>
 #include <vector>
 #include <memory>
-
+#include "factory.h"
 using namespace std::string_literals;
 
 
@@ -19,44 +19,114 @@ int main() {
     int i;
     Instrument instrument;
 //    std::vector<Instrument> instrumente;
-    std::vector<std::unique_ptr<Instrument>> instrumente;
+//    std::vector<std::unique_ptr<Instrument>> instrumente;
     std::string culoare, cantecel;
 
-    try {
-        if(c.getNume() == "N/A"){
-            throw 1;
-        }
 
+    try{
+        std::string numeCantaret = c.getNume();
+        std::vector<std::string> canteceCunoscuteDeCantaret = c.getCanteceCunoscute();
+        auto& instrumente = c.getInstrumente(); // auto pentruca am declarat un vector de instrumente separat si nu e referinta si incearca sa copieze
+        c.canta(3, "Bamboleo");
     }
-    catch(int x){
-        std::cout << "numele cantaretului nu a fost gasit. Error " << x << std::endl;
-        std::cout << "setez numele cantaretului la Antonio Banderas" << std::endl;
-        c.setNume("Antonio Banderas");
+    catch(std::invalid_argument &err){
+        std::cout << err.what() << std::endl;
+        return 0;
     }
-
-    try {
-        if(c.getCanteceCunoscute().size() == 0) {
-            throw 2;
-        }
+    catch(std::length_error &err){
+        std::cout << err.what() << std::endl;
+        return 0;
     }
-    catch(int x) {
-        std::cout << "Nu stie sa cante nici un cantec. Trist, dar rezolvam acum." << std::endl;
-        std::cout << "Adaug niste cantece";
-        c.setCanteceCunoscute({{"Bamboleo"s}, {"Am bani de ma enerveaza"s}});
+    catch(std::exception &err){
+        std:: cout << err.what();
+        return 0;
     }
-
-    try {
-        if(c.getInstrumente().size() == 0) {
-            throw 3;
-        }
-    }
-    catch(int x) {
-        std::cout << "Nu stie sa cante la nici un instrument. Trist, dar rezolvam acum." << std::endl;
-        std::cout << "Adaug niste cantece";
-        c.adauga_instrument("Chitara");
-    }
-
     std::cout << c;
+
+//    try {
+//        if(c.getNume() == "N/A"){
+//            throw 1;
+//        }
+//
+//    }
+//    catch(int x){
+//        std::cout << "numele cantaretului nu a fost gasit. Error " << x << std::endl;
+//        std::cout << "setez numele cantaretului la Antonio Banderas" << std::endl;
+//        c.setNume("Antonio Banderas");
+//    }
+
+//    try {
+//        if(c.getCanteceCunoscute().size() == 0) {
+//            throw 2;
+//        }
+//    }
+//    catch(int x) {
+//        std::cout << "Nu stie sa cante nici un cantec. Trist, dar rezolvam acum." << std::endl;
+//        std::cout << "Adaug niste cantece" << std::endl;
+//        c.setCanteceCunoscute({{"Bamboleo"s}, {"Am bani de ma enerveaza"s}});
+//    }
+
+//    try {
+//        if(c.getInstrumente().size() == 0) {
+//            throw 3;
+//        }
+//    }
+//    catch(int x) {
+//        std::cout << "Nu stie sa cante la nici un instrument. Trist, dar rezolvam acum." << std::endl;
+//        std::cout << "Adaug niste cantece";
+//        c.adauga_instrument("Chitara");
+//    }
+    try{
+        c.canta(3, "Bamboleo");
+    }
+    catch(std::exception &err){
+        std:: cout << err.what();
+    }
+    std::cout << c;
+
+
+    // NU E BINE SA FACI TRY TRY TRY ... TRY, pentru ca e si greu de citit si .. nu e ok :)))
+    // FACI UN SINGUR TRY DUPA CARE FACI CATCH
+//    try {
+//        if(c.getNume() == "N/A"){
+//            throw 1;
+//        }
+//
+//    }
+//    catch(int x){
+//        std::cout << "numele cantaretului nu a fost gasit. Error " << x << std::endl;
+//        std::cout << "setez numele cantaretului la Antonio Banderas" << std::endl;
+//        c.setNume("Antonio Banderas");
+//    }
+//
+//    try {
+//        if(c.getCanteceCunoscute().size() == 0) {
+//            throw 2;
+//        }
+//    }
+//    catch(int x) {
+//        std::cout << "Nu stie sa cante nici un cantec. Trist, dar rezolvam acum." << std::endl;
+//        std::cout << "Adaug niste cantece" << std::endl;
+//        c.setCanteceCunoscute({{"Bamboleo"s}, {"Am bani de ma enerveaza"s}});
+//    }
+//
+//    try {
+//        if(c.getInstrumente().size() == 0) {
+//            throw 3;
+//        }
+//    }
+//    catch(int x) {
+//        std::cout << "Nu stie sa cante la nici un instrument. Trist, dar rezolvam acum." << std::endl;
+//        std::cout << "Adaug niste cantece";
+//        c.adauga_instrument("Chitara");
+//    }
+//    try{
+//        c.canta(3, "Bamboleo");
+//    }
+//    catch(std::exception &err){
+//        std:: cout << err.what();
+//    }
+//    std::cout << c;
 
 
 

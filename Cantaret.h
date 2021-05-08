@@ -10,6 +10,8 @@
 #include <memory>
 #include <vector>
 #include "Instrument.h"
+
+
 class Cantaret {
 private:
     std::string nume;
@@ -19,15 +21,15 @@ public:
 //    void adauga_instrument(std::vector<Instrument> &instrumente);
     const std::vector<std::unique_ptr<Instrument>> &getInstrumente() const;
 
-    void afiseaza_instrumente(std::vector<Instrument> &instrumente);
+    void afiseaza_instrumente();
 
-    void produ_nota(std::vector<Instrument> &instrumente, int i);
+    void produ_nota(int i);
 
-    void acordeaza(std::vector<Instrument> &instrumente, int i);
+    void acordeaza(int i);
 
-    void vopseste(std::vector<Instrument> &instrumente, int i, std::string culoare);
+    void vopseste(int i, std::string culoare);
 
-    void canta(std::vector<Instrument> &instrumente, int i, std::string cantecel);
+    void canta(int i, std::string cantecel);
 
     void setNume(const std::string &nume);
 
@@ -39,7 +41,7 @@ public:
 
     Cantaret();
 
-    Cantaret(const std::string &nume, std::vector<std::string> &canteceCunoscute);
+    Cantaret(std::string nume, std::vector<std::string> &canteceCunoscute);
 
     friend std::ostream &operator<<(std::ostream &os, const Cantaret &cantaret);
 
